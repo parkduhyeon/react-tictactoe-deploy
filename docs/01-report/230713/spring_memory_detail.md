@@ -27,8 +27,21 @@
 
 
 ![garbage collection 2](./img/GC1.png)
+
+객체가 처음 생성되고 Heap영역의 Eden에 age-bit 0으로 할당됩니다. 이 age-bit는 Minor GC에서 살아남을 때마다 1씩 증가하게 됩니다.
 ![garbage collection 2](./img/GC2.png)
+
+시간이 지나 Heap Area의 Eden 영역에 객체가 다 쌓이게 되면 Minor GC가 한번 일어나게 되고 참조 정도에 따라 Servivor0 영역으로 이동하거나 회수됩니다
+
 ![garbage collection 2](./img/GC3.png)
+
+계속해서 Eden영역에는 신규 객체들이 생성됩니다. 이렇게 또 Eden영역에 객체가 다 쌓이게 되면 Young Generation(Eden+Servivor) 영역에 있는 객체들을 비어있는 Survival인 Survival1 영역에 이동하고 살아남은 모든 객체들은 age가 1씩 증가합니다.
 ![garbage collection 2](./img/GC4.png)
+
+또다시 Eden 영역에 신규 객체들로 가득 차게 되면 다시한번 minor GC가 일어나고 Young Generation(Eden+Servivor) 영역에 있는 객체들을 비어있는 Survival인 Survival0으로 이동시킨 뒤 age를 1 증가시킵니다. 이 과정을 계속 반복합니다.
 ![garbage collection 2](./img/GC5.png)
+
+이 과정을 반복하다 보면 age bit가 특정 숫자 이상으로 되는 경우가 발생합니다. 이때 JVM에서 설정해놓은 age bit에 도달하게 되면 오랫동안 쓰일 객체라고 판단하고 Old generation 영역으로 이동시킵니다. 이 과정을 프로모션(Promotion)이라고 합니다.
 ![garbage collection 2](./img/GC6.png)
+
+시간이 지나 Old영역에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 GC가 실행됩니다. 이렇게 Old generation영역의 메모리를 회수하는 GC를 Major GC라고 합니다. Major GC는 시간이 오래 걸리는 작업이고 이때 GC를 실행하는 스레드를 제외한 모든 스레드는 작업을 멈추게 됩니다. 이를 'Stop-the-World' 라 합니다. 이 작업이 너무 잦으면 프로그램 성능에 문제가 될 수 있습니다.
