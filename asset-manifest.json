@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/css/main.f89d53fa.css",
+    "main.js": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/js/main.a8f2694b.js",
+    "static/js/592.e74500f2.chunk.js": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/js/592.e74500f2.chunk.js",
+    "index.html": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/index.html",
+    "main.f89d53fa.css.map": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/css/main.f89d53fa.css.map",
+    "main.a8f2694b.js.map": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/js/main.a8f2694b.js.map",
+    "592.e74500f2.chunk.js.map": "/httpsL//parkduhyeon.github.io/react-tictactoe-deploy/static/js/592.e74500f2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f89d53fa.css",
+    "static/js/main.a8f2694b.js"
+  ]
+}
